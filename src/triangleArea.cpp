@@ -103,7 +103,7 @@ int main() {
 
   cout << result2 << endl;
 
-  cout << "Goodbye" << endl;
+  cout << "Goodbye Bienve" << endl;
   
   return 0;
 }
