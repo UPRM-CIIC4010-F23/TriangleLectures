@@ -95,6 +95,11 @@ int main() {
 
   cout << ((getAlpha(Triangle(10,10,10)) == (M_PI / 3.0)) ? "PASS" : "FAIL") << endl;
 
+
+  cout << "Test#1 isLargerThan: "<< (isLargerThan(Triangle(20,20,20),Triangle(10,10,10)) ? "PASS" : "FAIL") << endl;
+  cout << "Test#2 isLargerThan: "<< (isLargerThan(Triangle(10,10,10),Triangle(20,20,20)) ? "FAIL" : "PASS") << endl;
+  cout << "Test#3 isLargerThan: "<< (isLargerThan(Triangle(10,10,10),Triangle(10,10,10)) ? "FAIL" : "PASS") << endl;
+
   string result = encodeSpaces("Goodbye Cruel World");
 
   cout << result << endl;
