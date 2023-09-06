@@ -6,11 +6,7 @@
 
 using namespace std;
 
-double getArea(Triangle t) {
-  double s = (t.getSide1() + t.getSide2() + t.getSide3()) / 2.0;
-  double area = sqrt((s * (s-t.getSide1())*(s-t.getSide2())*(s-t.getSide3())));
-  return area;
-}
+
 
 // Returns the angle in radians opposite to side a
 double getAlpha(Triangle  t) {
@@ -23,7 +19,7 @@ double getAlpha(Triangle  t) {
 
 bool isLargerThan(Triangle t1, Triangle t2) {
 
-  return (getArea(t1)  >  getArea(t2));
+  return (t1.getArea()  >  t2.getArea());
 
 }
 
@@ -31,7 +27,7 @@ double sumOfAreas(Triangle triangles[],  int numTriangles) {
 
   double result =  0;
   for (int i=0; i<numTriangles; i++) {
-    result = result + getArea(triangles[i]);
+    result = result + triangles[i].getArea();
   }
   return result;
 
@@ -41,7 +37,7 @@ Triangle findLargest(Triangle triangles[], int numTriangles) {
 
     Triangle largest = triangles[0];
     for (int i=1;  i<numTriangles; i++) {
-      if (getArea(triangles[i]) > getArea(largest))  {
+      if (triangles[i].getArea() > largest.getArea())  {
         largest = triangles[i];
       }
     }
@@ -87,8 +83,8 @@ int main() {
 
   // Triangle t(10,10,10);
 
-  cout << "Area of first triangle is: " << getArea(Triangle(10,10,10)) << endl;
-  cout << "Area of second triangle is: " << getArea(Triangle(20,20,20)) << endl;
+  cout << "Area of first triangle is: " << Triangle(10,10,10).getArea() << endl;
+  cout << "Area of second triangle is: " << Triangle(20,20,20).getArea() << endl;
 
   // double actual = getAlpha(Triangle(10,10,10));
   // double expected = (M_PI / 3.0);
