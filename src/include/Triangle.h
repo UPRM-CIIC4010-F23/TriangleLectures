@@ -12,6 +12,10 @@ class Triangle {
   int getSide2() { return sides[1]; }
   int getSide3() { return sides[2]; }
 
+  void setSide1(int s) { sides[0] = s; }
+  void setSide2(int s) { sides[1] = s; }
+  void setSide3(int s) { sides[2] = s; }
+
   Triangle(int a, int  b, int c) {
     sides[0] = a;
     sides[1] = b;
