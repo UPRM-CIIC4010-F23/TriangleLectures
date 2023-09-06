@@ -7,15 +7,15 @@
 using namespace std;
 
 double getArea(Triangle t) {
-  double s = (t.s1 + t.s2 + t.s3) / 2.0;
-  double area = sqrt((s * (s-t.s1)*(s-t.s2)*(s-t.s3)));
+  double s = (t.getSide1() + t.getSide2() + t.getSide3()) / 2.0;
+  double area = sqrt((s * (s-t.getSide1())*(s-t.getSide2())*(s-t.getSide3())));
   return area;
 }
 
 // Returns the angle in radians opposite to side a
 double getAlpha(Triangle  t) {
 
-  double cosineAlpha = ((t.s1 * t.s1) - (t.s2 * t.s2) - (t.s3 * t.s3)) / (-2.0  * t.s2  * t.s3);
+  double cosineAlpha = ((t.getSide1() * t.getSide1()) - (t.getSide2() * t.getSide2()) - (t.getSide3() * t.getSide3())) / (-2.0  * t.getSide2()  * t.getSide3());
   double alpha = acos(cosineAlpha);
   return alpha;
 
