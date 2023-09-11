@@ -1,4 +1,8 @@
+#pragma once
 
+#include<vector>
+
+using namespace std;
 class Triangle {
 
   private:
@@ -32,7 +36,7 @@ class Triangle {
   bool isLargerThan(Triangle t2) ;
 
   // static methods
-  static double sumOfAreas(Triangle triangles[],  int numTriangles) ;
+  static double sumOfAreas(vector<Triangle> triangles) ;
   static Triangle findLargest(Triangle triangles[], int numTriangles) ;
 
 };

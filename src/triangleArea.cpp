@@ -2,6 +2,7 @@
 #include <cmath>
 #include <cctype>
 #include <string>
+#include<vector>
 #include "include/Triangle.h"
 
 using namespace std;
@@ -43,9 +44,9 @@ string removeNonAlpha(string sourceString) {
 
 int main() {
 
-  // Triangle t(10,10,10);
+  Triangle t(10,10,10);
 
-  cout << "Area of first triangle is: " << Triangle(10,10,10).getArea() << endl;
+  cout << "Area of first triangle is: " << t.getArea() << endl;
   cout << "Area of second triangle is: " << Triangle(20,20,20).getArea() << endl;
 
   // double actual = getAlpha(Triangle(10,10,10));
@@ -69,8 +70,12 @@ int main() {
   cout << "Goodbye Bienve" << endl;
 
   Triangle t2(10,10,10) ;
-
   cout << "Perimeter is: " << t2.getSide1() + t2.getSide2() + t2.getSide3() << endl ;
+
+  vector<Triangle> triangleVector { Triangle(10,10,10), Triangle(20,20,20), Triangle(30,30,30)} ;
+
+  cout <<"sumOfAreas is: " << Triangle::sumOfAreas(triangleVector) << endl ;
+  cout <<"sumOfAreas is: " << Triangle::sumOfAreas(triangleVector) << endl ;
   
   return 0;
 }

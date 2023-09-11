@@ -24,10 +24,10 @@ bool Triangle::isLargerThan(Triangle t2) {
 
 }
 
-double Triangle::sumOfAreas(Triangle triangles[],  int numTriangles) {
+double Triangle::sumOfAreas(vector<Triangle> triangles) {
 
   double result =  0;
-  for (int i=0; i<numTriangles; i++) {
+  for (int i=0; i<triangles.size(); i++) {
     result = result + triangles[i].getArea();
   }
   return result;
