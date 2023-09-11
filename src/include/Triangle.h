@@ -26,11 +26,13 @@ class Triangle {
     sides[2] = c;
   }
 
-  // methods
-  double getArea() {
-    double s = (this->getSide1() + this->getSide2() + this->getSide3()) / 2.0;
-    double area = sqrt((s * (s - this->getSide1()) * (s - this->getSide2()) * (s - this->getSide3())));
-    return area;
-  }
+  // instance methods
+  double getArea()  ; 
+  double getAlpha() ; 
+  bool isLargerThan(Triangle t2) ;
+
+  // static methods
+  static double sumOfAreas(Triangle triangles[],  int numTriangles) ;
+  static Triangle findLargest(Triangle triangles[], int numTriangles) ;
 
 };

@@ -7,44 +7,6 @@
 using namespace std;
 
 
-
-// Returns the angle in radians opposite to side a
-double getAlpha(Triangle  t) {
-
-  double cosineAlpha = ((t.getSide1() * t.getSide1()) - (t.getSide2() * t.getSide2()) - (t.getSide3() * t.getSide3())) / (-2.0  * t.getSide2()  * t.getSide3());
-  double alpha = acos(cosineAlpha);
-  return alpha;
-
-}
-
-bool isLargerThan(Triangle t1, Triangle t2) {
-
-  return (t1.getArea()  >  t2.getArea());
-
-}
-
-double sumOfAreas(Triangle triangles[],  int numTriangles) {
-
-  double result =  0;
-  for (int i=0; i<numTriangles; i++) {
-    result = result + triangles[i].getArea();
-  }
-  return result;
-
-}
-
-Triangle findLargest(Triangle triangles[], int numTriangles) {
-
-    Triangle largest = triangles[0];
-    for (int i=1;  i<numTriangles; i++) {
-      if (triangles[i].getArea() > largest.getArea())  {
-        largest = triangles[i];
-      }
-    }
-    return largest;
-
-}
-
 // Returns new string with all spaces replaced with '_'
 string encodeSpaces(string unencoded) {
 
@@ -89,12 +51,12 @@ int main() {
   // double actual = getAlpha(Triangle(10,10,10));
   // double expected = (M_PI / 3.0);
 
-  cout << ((getAlpha(Triangle(10,10,10)) == (M_PI / 3.0)) ? "PASS" : "FAIL") << endl;
+  cout << ((Triangle(10,10,10).getAlpha() == (M_PI / 3.0)) ? "PASS" : "FAIL") << endl;
 
 
-  cout << "Test#1 isLargerThan: "<< (isLargerThan(Triangle(20,20,20),Triangle(10,10,10)) ? "PASS" : "FAIL") << endl;
-  cout << "Test#2 isLargerThan: "<< (isLargerThan(Triangle(10,10,10),Triangle(20,20,20)) ? "FAIL" : "PASS") << endl;
-  cout << "Test#3 isLargerThan: "<< (isLargerThan(Triangle(10,10,10),Triangle(10,10,10)) ? "FAIL" : "PASS") << endl;
+  cout << "Test#1 isLargerThan: "<< (Triangle(20,20,20).isLargerThan(Triangle(10,10,10)) ? "PASS" : "FAIL") << endl;
+  cout << "Test#2 isLargerThan: "<< (Triangle(10,10,10).isLargerThan(Triangle(20,20,20)) ? "FAIL" : "PASS") << endl;
+  cout << "Test#3 isLargerThan: "<< (Triangle(10,10,10).isLargerThan(Triangle(10,10,10)) ? "FAIL" : "PASS") << endl;
 
   string result = encodeSpaces("Goodbye Cruel World");
 
@@ -105,6 +67,10 @@ int main() {
   cout << result2 << endl;
 
   cout << "Goodbye Bienve" << endl;
+
+  Triangle t2(10,10,10) ;
+
+  cout << "Perimeter is: " << t2.getSide1() + t2.getSide2() + t2.getSide3() << endl ;
   
   return 0;
 }
