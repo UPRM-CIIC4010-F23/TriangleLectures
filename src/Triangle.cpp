@@ -53,3 +53,7 @@ void Triangle::scaleSides(vector<Triangle> &triangles, double factor) {
         triangles[i].setSide3(triangles[i].getSide3()*factor);
     }
 }
+
+void Triangle::scaleSides(vector<Triangle> &triangles) {
+    Triangle::scaleSides(triangles,2); 
+}

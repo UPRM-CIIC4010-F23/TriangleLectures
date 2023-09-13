@@ -40,5 +40,6 @@ class Triangle {
   static Triangle findLargest(Triangle triangles[], int numTriangles) ;
 
   static void scaleSides(vector<Triangle> &triangles, double factor) ;
+  static void scaleSides(vector<Triangle> &triangles) ;
 
 };
