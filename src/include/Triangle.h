@@ -14,9 +14,9 @@ class Triangle {
 
   public:
   // getters
-  int getSide1() { return sides[0]; }
-  int getSide2() { return sides[1]; }
-  int getSide3() { return sides[2]; }
+  int getSide1() const { return sides[0]; }
+  int getSide2() const { return sides[1]; }
+  int getSide3() const { return sides[2]; }
   
   // setters
   void setSide1(int s) { sides[0] = s; }
@@ -31,12 +31,14 @@ class Triangle {
   }
 
   // instance methods
-  double getArea()  ; 
+  double getArea()  const ; 
   double getAlpha() ; 
   bool isLargerThan(Triangle t2) ;
 
   // static methods
-  static double sumOfAreas(vector<Triangle> triangles) ;
+  static double sumOfAreas (const vector<Triangle> &triangles) ;
   static Triangle findLargest(Triangle triangles[], int numTriangles) ;
+
+  static void scaleSides(vector<Triangle> &triangles, double factor) ;
 
 };

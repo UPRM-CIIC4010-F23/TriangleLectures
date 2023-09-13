@@ -3,7 +3,7 @@
 
 
 // methods
-  double Triangle::getArea() {
+  double Triangle::getArea() const{
     double s = (this->getSide1() + this->getSide2() + this->getSide3()) / 2.0;
     double area = sqrt((s * (s - this->getSide1()) * (s - this->getSide2()) * (s - this->getSide3())));
     return area;
@@ -24,7 +24,7 @@ bool Triangle::isLargerThan(Triangle t2) {
 
 }
 
-double Triangle::sumOfAreas(vector<Triangle> triangles) {
+double Triangle::sumOfAreas(const vector<Triangle> &triangles) {
 
   double result =  0;
   for (int i=0; i<triangles.size(); i++) {
@@ -44,4 +44,12 @@ Triangle Triangle::findLargest(Triangle triangles[], int numTriangles) {
     }
     return largest;
 
+}
+
+void Triangle::scaleSides(vector<Triangle> &triangles, double factor) {
+    for (int i=0; i<triangles.size(); i++){
+        triangles[i].setSide1(triangles[i].getSide1()*factor);
+        triangles[i].setSide2(triangles[i].getSide2()*factor);
+        triangles[i].setSide3(triangles[i].getSide3()*factor);
+    }
 }

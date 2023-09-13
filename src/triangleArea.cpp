@@ -77,5 +77,8 @@ int main() {
   cout <<"sumOfAreas is: " << Triangle::sumOfAreas(triangleVector) << endl ;
   cout <<"sumOfAreas is: " << Triangle::sumOfAreas(triangleVector) << endl ;
   
+  Triangle::scaleSides(triangleVector, 3) ;
+
+
   return 0;
 }
